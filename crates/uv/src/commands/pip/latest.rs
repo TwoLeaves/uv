@@ -29,7 +29,7 @@ impl LatestClient<'_> {
         package: &PackageName,
         index: Option<&IndexUrl>,
         download_concurrency: &Semaphore,
-    ) -> anyhow::Result<Option<DistFilename>, uv_client::Error> {
+    ) -> Result<Option<DistFilename>, uv_client::Error> {
         debug!("Fetching latest version of: `{package}`");
 
         let archives = match self
